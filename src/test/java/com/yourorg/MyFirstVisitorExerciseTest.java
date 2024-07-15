@@ -34,4 +34,37 @@ class MyFirstVisitorExerciseTest implements RewriteTest {
         );
     }
 
+    @Test
+    void notTheAnswerToLifeTest() {
+        rewriteRun(
+          java("""
+            class Test {
+               int testMethod() {
+                    return 11 + 32;
+               }
+            }
+            """)
+        );
+    }
+
+    @Test
+    void theAnswerToLifeAnotherMethodTest() {
+        rewriteRun(
+          java("""
+            class Test {
+               int testMethod2() {
+                    return 21 + 21;
+               }
+            }
+            """,
+            """
+            class Test {
+               int theAnswerToLife() {
+                    return 21 + 21;
+               }
+            }
+            """)
+        );
+    }
+
 }
