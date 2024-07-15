@@ -15,11 +15,19 @@ class MyFirstVisitorExerciseTest implements RewriteTest {
     }
 
     @Test
-    void theAnswerToUniverseTest() {
+    void theAnswerToLifeTest() {
         rewriteRun(
           java("""
-            class Test{
-               void testMethod() {
+            class Test {
+               int testMethod() {
+                    return 10 + 32;
+               }
+            }
+            """,
+            """
+            class Test {
+               int theAnswerToLife() {
+                    return 10 + 32;
                }
             }
             """)
