@@ -18,19 +18,19 @@ class MyFirstVisitorExerciseTest implements RewriteTest {
     void theAnswerToLifeTest() {
         rewriteRun(
           java("""
-            class Test {
-               int testMethod() {
-                    return 10 + 32;
-               }
-            }
-            """,
+              class Test {
+                 int testMethod() {
+                      return 10 + 32;
+                 }
+              }
+              """,
             """
-            class Test {
-               int theAnswerToLife() {
-                    return 10 + 32;
-               }
-            }
-            """)
+              class Test {
+                 int theAnswerToLife() {
+                      return 10 + 32;
+                 }
+              }
+              """)
         );
     }
 
@@ -51,19 +51,19 @@ class MyFirstVisitorExerciseTest implements RewriteTest {
     void theAnswerToLifeAnotherMethodTest() {
         rewriteRun(
           java("""
-            class Test {
-               int testMethod2() {
-                    return 21 + 21;
-               }
-            }
-            """,
+              class Test {
+                 int testMethod2() {
+                      return 21 + 21;
+                 }
+              }
+              """,
             """
-            class Test {
-               int theAnswerToLife() {
-                    return 21 + 21;
-               }
-            }
-            """)
+              class Test {
+                 int theAnswerToLife() {
+                      return 21 + 21;
+                 }
+              }
+              """)
         );
     }
 
